@@ -1,1 +1,0 @@
-DIRECTORY_PATH = 'data/properties.csv'
