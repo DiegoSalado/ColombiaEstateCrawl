@@ -7,20 +7,18 @@ Metrocuadrado contains listings of various types of properties, including apartm
 
 ## Use
 
-This repository works running *main.py* .
-
 This repository operates by running the *'main.py'* script and specifying the following arguments: *'list_properties_type'*, *'sell_or_rent'*, *'coords'*, and *'city'*.
 
-- *'list_properties_type'* values "['apartamento','casa','oficina','local','bodega','lote','finca','consultorio','edificio-de-oficinas','edificio-de-apartamentos']"
+| Parameter  | Values | Description |
+|---------------------|----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| list_properties_type| `['apartment', 'house', 'office', 'store', 'warehouse', 'lot', 'farm', 'medical_office', 'office_building', 'apartment_building']` | Allowed values for property types. |
+| sell_or_rent  | `'sale'` or `'rent'`  | Indicates whether the property is for sale or for rent.|
+| coords  | `True` or `False`| If you choose `True`, all property listings will include geographical coordinates (latitude and longitude) for precise location data. This option is useful for mapping and spatial analysis purposes. Please note that selecting `True` might significantly increase the extraction time due to the additional data retrieval process. |
+| city  | Optional | If not specified, information will be extracted for all cities on the site.|
 
-- *'sell_or_rent'* 'venta' or 'renta'.
-
-- *'coords'* True or False, if you chose True, all property listings will include geographical coordinates (latitude and longitude) for precise location data. This option is useful for mapping and spatial analysis purposes. Please note that selecting True might significantly increase the extraction time due to the additional data retrieval process.
-
-- *'city'* optional, if you don't specify, information will be extracted for all cities on the site.
-
-
-`$ main.py  "list_properties_type"    sell_or_rent    coords   city`
+```
+$ main.py  "list_properties_type"    sell_or_rent    coords   city
+```
 
 
 ### Warning
