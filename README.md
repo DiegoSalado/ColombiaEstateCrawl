@@ -10,11 +10,11 @@ Metrocuadrado contains listings of various types of properties, including apartm
 This repository operates by running the *'main.py'* script and specifying the following arguments: *'list_properties_type'*, *'sell_or_rent'*, *'coords'*, and *'list_cities'*.
 
 | Parameter  | Values | Description |
-|---------------------|----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|------------|--------|-------------|
 | list_properties_type| `['apartamento','casa','oficina','local','bodega','lote','finca','consultorio','edificio-de-oficinas','edificio-de-apartamentos']` | Allowed values for property types. |
 | sell_or_rent  | `'vent'` or `'renta'`  | Indicates whether the property is for sale or for rent.|
 | coords  | `True` or `False`| If you choose `True`, all property listings will include geographical coordinates (latitude and longitude) for precise location data. This option is useful for mapping and spatial analysis purposes. Please note that selecting `True` might significantly increase the extraction time due to the additional data retrieval process. |
-| list_cities  | ['Cartagena', 'Rionegro', 'Mosquera', 'Neiva', 'Barranquilla', 'Bello', 'Arbelaez', 'Ricaurte','Malambo','Chía','Jamundí','Calera','Itaguí','Bucaramanga','Valledupar', 'Villavicencio','Funza', 'Floridablanca','Palmira','Ibagué','Fusagasuga','Medellín','Cúcuta','Cajicá','Soacha','Tunja', 'Cartago','Sogamoso','Anapoima','Zipaquirá','Envigado','Melgar','Villeta','Marta','Colombia','Madrid', 'Soledad','Sopó','Cota','Pereira','Armenia','Sabaneta','Cali','Manizales','Bogotá', 'Tocancipá'] | If not specified, information will be extracted for all cities on the site.|
+| list_cities  | `['Cartagena', 'Rionegro', 'Mosquera', 'Neiva', 'Barranquilla', 'Bello', 'Arbelaez', 'Ricaurte','Malambo','Chía','Jamundí','Calera','Itaguí','Bucaramanga','Valledupar', 'Villavicencio','Funza', 'Floridablanca','Palmira','Ibagué','Fusagasuga','Medellín','Cúcuta','Cajicá','Soacha','Tunja', 'Cartago','Sogamoso','Anapoima','Zipaquirá','Envigado','Melgar','Villeta','Marta','Colombia','Madrid', 'Soledad','Sopó','Cota','Pereira','Armenia','Sabaneta','Cali','Manizales','Bogotá', 'Tocancipá']` | If not specified, information will be extracted for all cities on the site.|
 
 ```
 $ python main.py  "list_properties_type"  sell_or_rent    coords   "list_cities"
