@@ -1,5 +1,5 @@
 import pandas as pd
-from utils import get_coordinates, get_information
+from utils import get_extra_information, get_information
 from tqdm import tqdm
 import json
 import sys
@@ -9,7 +9,7 @@ import ast
 # process input
 property_types = ast.literal_eval(sys.argv[1])
 sell_or_rent = sys.argv[2]
-coords = eval(sys.argv[3])
+extra_information = eval(sys.argv[3])
 try:
     cities = ast.literal_eval(sys.argv[4])
     print(cities)
@@ -31,7 +31,7 @@ else:
     DIRECTORY_PATH = f'data/{cities_str}_{property_types_str}_{sell_or_rent}_properties.csv'
     
 
-def main(property_types:list, sell_or_rent, coords, cities:list):
+def main(property_types:list, sell_or_rent, extra_information, cities:list):
     data = pd.DataFrame()
     for city in cities:
         for type_ in property_types:
@@ -77,11 +77,14 @@ def main(property_types:list, sell_or_rent, coords, cities:list):
 
     data.to_csv(DIRECTORY_PATH, index=False)
 
-    if coords:
+    if extra_information:
         data = pd.read_csv(DIRECTORY_PATH).drop_duplicates().reset_index()
+        print('Dowloading extra information...')
         for index_ in tqdm(data.index):
             try:
-                data.loc[index_, 'lat'], data.loc[index_, 'lon'] = get_coordinates(data.loc[index_, 'link'])
+                full_information = get_extra_information(data.loc[index_, 'link'])
+                for feature, value in full_information.items():
+                    data.loc[index_,feature] = value
             except:
                 pass
         data.to_csv(DIRECTORY_PATH, index=False)
@@ -89,4 +92,4 @@ def main(property_types:list, sell_or_rent, coords, cities:list):
     return None
 
 if __name__ == '__main__':
-    main(property_types, sell_or_rent, coords, cities)
+    main(property_types, sell_or_rent, extra_information, cities)
