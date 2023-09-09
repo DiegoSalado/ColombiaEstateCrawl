@@ -12,12 +12,12 @@ This repository operates by running the *'main.py'* script and specifying the fo
 | Parameter            | Description                                                                                   | Values                                                                                                                                                                                                                                                                                                                                                                             |
 |----------------------|-----------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | list_properties_type | Allowed values for property types.                                                           | [`'apartamento'`, `'casa'`, `'oficina'`, `'local'`, `'bodega'`, `'lote'`, `'finca'`, `'consultorio'`, `'edificio-de-oficinas'`, `'edificio-de-apartamentos'`] |
-| sell_or_rent         | Indicates whether the property is for sale or for rent.                                    | [`'vent'`, `'renta'`] |
-| coords               | If you choose `True`, all property listings will include geographical coordinates.          | [`True`, `False`]|
+| sell_or_rent         | Indicates whether the property is for sale or for rent.                                    | `'venta'` or `'renta'` |
+| extra_information               | If you choose `True`, all property listings will include geographical coordinates and descriptions, this can significantly increase the extraction time.          | `True` or `False`|
 | list_cities          | If not specified, information will be extracted for all cities on the site.               | [`'Cartagena'`, `'Rionegro'`, `'Mosquera'`, `'Neiva'`, `'Barranquilla'`, `'Bello'`, `'Arbelaez'`, `'Ricaurte'`, `'Malambo'`, `'Chía'`, `'Jamundí'`, `'Calera'`, `'Itaguí'`, `'Bucaramanga'`, `'Valledupar'`, `'Villavicencio'`, `'Funza'`, `'Floridablanca'`, `'Palmira'`, `'Ibagué'`, `'Fusagasuga'`, `'Medellín'`, `'Cúcuta'`, `'Cajicá'`, `'Soacha'`, `'Tunja'`, `'Cartago'`, `'Sogamoso'`, `'Anapoima'`, `'Zipaquirá'`, `'Envigado'`, `'Melgar'`, `'Villeta'`, `'Marta'`, `'Colombia'`, `'Madrid'`, `'Soledad'`, `'Sopó'`, `'Cota'`, `'Pereira'`, `'Armenia'`, `'Sabaneta'`, `'Cali'`, `'Manizales'`, `'Bogotá'`, `'Tocancipá'`] |
 
 ```
-$ python main.py  "list_properties_type"  sell_or_rent    coords   "list_cities"
+$ python main.py  "list_properties_type"  sell_or_rent    extra_information   "list_cities"
 ```
 
 #### Example
