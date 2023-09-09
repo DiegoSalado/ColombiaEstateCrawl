@@ -7,7 +7,7 @@ Metrocuadrado contains listings of various types of properties, including apartm
 
 ## Use
 
-This repository operates by running the *'main.py'* script and specifying the following arguments: *'list_properties_type'*, *'sell_or_rent'*, *'coords'*, and *'list_cities'*.
+This repository operates by running the **'main.py'** script and specifying the following arguments: **'list_properties_type'**, **'sell_or_rent'**, **'extra_information'**, and **'list_cities'**.
 
 | Parameter            | Description                                                                                   | Values                                                                                                                                                                                                                                                                                                                                                                             |
 |----------------------|-----------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
