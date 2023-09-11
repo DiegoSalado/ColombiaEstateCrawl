@@ -25,15 +25,12 @@ except:
 cities_str = '_'.join(cities)
 property_types_str = '_'.join(property_types)
 
-if len(cities)==46:
-    DIRECTORY_PATH = f'data/colombia_{property_types_str}_{sell_or_rent}_properties.csv'
-else:
-    DIRECTORY_PATH = f'data/{cities_str}_{property_types_str}_{sell_or_rent}_properties.csv'
+
     
 
 def main(property_types:list, sell_or_rent, extra_information, cities:list):
-    data = pd.DataFrame()
     for city in cities:
+        data = pd.DataFrame()
         for type_ in property_types:
             for use_status in ['nuevo', 'usado']:
                 print(f'Dowloading all [{city}, {type_}, {use_status}]...')
@@ -74,20 +71,23 @@ def main(property_types:list, sell_or_rent, extra_information, cities:list):
                                     except:
                                         print(params)
                                 
-
-    data.to_csv(DIRECTORY_PATH, index=False)
-
-    if extra_information:
-        data = pd.read_csv(DIRECTORY_PATH).drop_duplicates().reset_index()
-        print('Dowloading extra information...')
-        for index_ in tqdm(data.index):
-            try:
-                full_information = get_extra_information(data.loc[index_, 'link'])
-                for feature, value in full_information.items():
-                    data.loc[index_,feature] = value
-            except:
-                pass
+        DIRECTORY_PATH = f'data/{city}_{property_types_str}_{sell_or_rent}_properties.csv'
         data.to_csv(DIRECTORY_PATH, index=False)
+
+        if extra_information:
+            try:
+                data = pd.read_csv(DIRECTORY_PATH).drop_duplicates().reset_index()
+            except:
+                continue
+            print('Dowloading extra information...')
+            for index_ in tqdm(data.index):
+                try:
+                    full_information = get_extra_information(data.loc[index_, 'link'])
+                    for feature, value in full_information.items():
+                        data.loc[index_,feature] = value
+                except:
+                    pass
+            data.to_csv(DIRECTORY_PATH, index=False)
 
     return None
 
