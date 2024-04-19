@@ -46,13 +46,13 @@ def main(property_types:list, sell_or_rent, extra_information, cities:list):
                                     "realEstateStatus": use_status,
                                     "city": city,
                                     "from": "0",
-                                    "size": "300"
+                                    "size": "50"
                                 }
                                 
                                 response = get_information(params)
                                 data = pd.concat([data, pd.DataFrame(response['results'])])
                                 n_properties = response['totalHits']
-                                n_pages = n_properties//300 if n_properties%300==0 else n_properties//300 +1
+                                n_pages = n_properties//50 if n_properties%50==0 else n_properties//50 +1
 
                                 for property in range(n_pages):                
                                     params = {
@@ -63,7 +63,7 @@ def main(property_types:list, sell_or_rent, extra_information, cities:list):
                                         "realEstateStatus": use_status,
                                         "city": city,
                                         "from": str((property+1)*300),
-                                        "size": "300"
+                                        "size": "50"
                                     }
                                     try:
                                         response = get_information(params)
