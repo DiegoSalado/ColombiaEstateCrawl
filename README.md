@@ -38,3 +38,5 @@ The creators and maintainers of ColombiaEstateCrawl do not endorse or encourage 
 By accessing and using ColombiaEstateCrawl, you acknowledge that the repository is designed solely to provide educational insights into web scraping techniques. The creators and maintainers of this repository disclaim any liability for the actions or consequences resulting from the use of the information, code, or techniques described herein.
 
 Please use the information and techniques from ColombiaEstateCrawl responsibly, ensuring that your actions align with legal and ethical standards.
+
+You can visualize the average rental value of Bogotá city using the data scraped [Here](https://diegosalado.github.io/ColombiaEstateCrawl/heatmap.html).
